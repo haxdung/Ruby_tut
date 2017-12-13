@@ -1,0 +1,7 @@
+<% provide :title, t("help") %>
+<h1><%= t "help" %></h1>
+<p>
+  <%= t("help_message_html", href1: link_to( t("link3"),
+    "http://www.railstutorial.org/help"), href2:
+    link_to(t("link4"),"http://www.railstutorial.org/book")) %>
+</p>
