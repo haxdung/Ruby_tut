@@ -6,6 +6,8 @@ en:
   log_in: "Log in"
   new_user: "New user"
   sign_up: "Sign up"
+  confirmation: "Confirmation"
+  create_my_account: "Create my account"
   page_for_new_user: "Page for new user"
   sample_app: "Sample app"
   welcome: "This is the home page for the Ruby on Rails Tutorial sample
@@ -19,3 +21,5 @@ en:
     To get help on this sample app, see the <b>%{href2}  Tutorial </b>"
   link3: "Help on ROR"
   link4: "Help abc"
+  
+  
