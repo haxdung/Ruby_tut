@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
-  before_action :correct_user, only: [:edit, :update]
+  before_action :correct_user, only: [:edit, :update, :show]
   before_action :verify_admin, only: :destroy
 
   def index
@@ -12,9 +12,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by id: params[:id]
-    redirect_to root_url unless @user
-    @microposts = @user.microposts.paginate(page: params[:page])
+    @microposts = @user.microposts.paginate page: params[:page]
   end
 
   def create
@@ -29,7 +27,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find_by id: params[:id]
   end
 
   def update
@@ -42,11 +39,11 @@ class UsersController < ApplicationController
   end
 
   def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = t "login_please"
-        redirect_to login_url
-      end
+    unless logged_in?
+      store_location
+      flash[:danger] = t "login_please"
+      redirect_to login_url
+    end
   end
 
   def destroy
@@ -64,11 +61,13 @@ class UsersController < ApplicationController
 
   def correct_user
     @user = User.find_by id: params[:id]
-    redirect_to root_url unless current_user? @user
+    unless current_user? @user
+      flash[:danger] = t "not_current_user"
+      redirect_to login_url
+    end
   end
 
   def verify_admin
     redirect_to(root_url) unless current_user.admin?
   end
-
 end

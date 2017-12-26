@@ -17,6 +17,7 @@ en:
   edit_user: "Edit user"
   check_your_email: "Check your email for the activation link."
   user: "Users"
+  micropost_created: "Micropost created!"
   all_users: "All users"
   profile: "Profile"
   setting: "Settings"
@@ -58,3 +59,5 @@ en:
   password_expired: "Password reset has expired."
   account_not_activated: "Account not activated"
   check_mail: "Check your email for the activation link."
+  not_current_user: "Not current user"
+  
