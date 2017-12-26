@@ -1,5 +1,9 @@
 class User < ApplicationRecord
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  attr_accessor :remember_token
+>>>>>>> chap9
 =======
   attr_accessor :remember_token
 >>>>>>> chap9
