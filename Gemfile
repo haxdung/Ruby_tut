@@ -15,6 +15,8 @@ gem "coffee-rails", "~> 4.2"
 gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
 gem "bcrypt-ruby", "~> 3.1.2"
+gem "jquery-ui-rails", "~> 4.2.1"
+gem "jquery-rails"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
