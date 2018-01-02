@@ -183,7 +183,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+<<<<<<< HEAD
+=======
   bcrypt-ruby (~> 3.1.2)
+>>>>>>> chap5
   bootstrap-sass (= 3.3.7)
   byebug
   capybara (~> 2.13)
