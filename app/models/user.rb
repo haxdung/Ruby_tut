@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-
+  has_many :microposts, dependent: :destroy
   attr_accessor :remember_token, :activation_token, :reset_token
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\Z/i
 
@@ -63,8 +63,11 @@ class User < ApplicationRecord
     reset_sent_at < 2.hours.ago
   end
 
-  private
+  def feed
+    Micropost.where("user_id = ?", id)
+  end
 
+  private
     def downcase_email
       self.email = email.downcase
     end
