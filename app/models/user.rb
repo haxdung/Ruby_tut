@@ -1,7 +1,7 @@
 class User < ApplicationRecord
+
   attr_accessor :remember_token
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\Z/i
-
   before_save {self.email = email.downcase}
 
   validates :name, presence: true, length: {maximum: 50}
@@ -19,9 +19,9 @@ class User < ApplicationRecord
 	  BCrypt::Password.create(string, cost: cost)
 	  end
 	  
-	def new_token
-	  SecureRandom.urlsafe_base64
-	end
+  	def new_token
+  	  SecureRandom.urlsafe_base64
+  	end
   end
 
   def remember
@@ -37,4 +37,5 @@ class User < ApplicationRecord
   def forget
     update_attribute(:remember_digest, nil)
   end
+
 end
