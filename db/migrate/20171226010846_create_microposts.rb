@@ -7,5 +7,8 @@ class CreateMicroposts < ActiveRecord::Migration[5.1]
       t.timestamps
     end
     add_index :microposts, [:user_id, :created_at]
+    add_index :relationships, :follower_id
+    add_index :relationships, :followed_id
+    add_index :relationships, [:follower_id, :followed_id], unique: true
   end
 end

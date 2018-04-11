@@ -42,7 +42,11 @@ class PasswordResetsController < ApplicationController
     end
 
     def get_user
-      @user = User.find_by(email: params[:email])
+      @user = User.find_by email: params[:email]
+      unless current_user? @user
+        flash[:danger] = t "not_current_user"
+        redirect_to login_url
+      end
     end
 
     def valid_user
@@ -58,5 +62,4 @@ class PasswordResetsController < ApplicationController
         redirect_to new_password_reset_url
       end
     end
-
 end

@@ -24,6 +24,7 @@ gem "carrierwave", "1.1.0"
 gem "mini_magick", "4.7.0"
 gem "fog-aws", "2.0.0"
 gem "nokogiri", "1.8.1"
+gem "config"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
