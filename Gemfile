@@ -30,7 +30,15 @@ group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "capybara", "~> 2.13"
   gem "selenium-webdriver"
+  gem "rspec-rails", "~> 3.6"
+  gem "factory_girl_rails", require: false
 end
+
+group :test do
+    gem "database_cleaner"
+    gem 'shoulda-matchers', '~> 3.0', require: false
+    gem "launchy"
+  end
 
 group :development do
   gem "web-console", ">= 3.3.0"
